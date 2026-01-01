@@ -6,8 +6,8 @@ name: Swayzzite
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 42 # latest is also supported if you want new updates ASAP
+base-image: ghcr.io/ublue-os/bazzite-dx-nvidia
+image-version: latest
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -21,10 +21,52 @@ modules:
     repos:
       copr:
         - atim/starship
+        - solopasha/hyprland
+        - pgdev/ghostty
+        - erikreider/SwayNC
+        - sentriz/cliphist
     install:
       packages:
-        - micro
+        # Core & Terminal
+        - sway
+        - foot
+        - ghostty
         - starship
+        - micro
+        # UI & Widgets
+        - waybar
+        - eww
+        - tofi
+        - SwayNC
+        - nwg-look
+        # Files
+        - yazi
+        - dolphin
+        - kio-extras
+        # Utilities & Screen
+        - hyprlock
+        - hypridle
+        - kanshi
+        - wdisplays
+        - wlr-randr
+        - swww
+        - brightnessctl
+        - imv
+        - waypipe
+        - gammastep
+        # Screenshots & Clipboard
+        - grim
+        - slurp
+        - swappy
+        - wl-clipboard
+        - wl-clip-persist
+        - cliphist
+        # System Essentials
+        - xdg-desktop-portal-wlr
+        - polkit-gnome
+        - jetbrains-mono-fonts
+        - google-noto-sans-fonts
+        - google-noto-emoji-fonts
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)

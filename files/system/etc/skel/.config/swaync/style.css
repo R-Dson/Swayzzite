@@ -1,0 +1,126 @@
+/* SwayNC Styles - Solarized Dark */
+
+* {
+    font-family: "JetBrains Mono", monospace;
+}
+
+window {
+    background: transparent;
+}
+
+.notification-row {
+    outline: none;
+}
+
+.notification-row:focus,
+.notification-row:hover {
+    background: #073642;
+}
+
+.notification-content {
+    background: #002b36;
+    border-radius: 8px;
+    margin: 8px;
+    padding: 12px;
+    border: 1px solid #859900;
+}
+
+.notification-default-action {
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+}
+
+.close-button {
+    background: #dc322f;
+    color: #002b36;
+    border-radius: 4px;
+    margin: 4px;
+    padding: 4px;
+}
+
+.close-button:hover {
+    background: #cb4b16;
+}
+
+.notification-action {
+    background: #073642;
+    color: #839496;
+    border: 1px solid #859900;
+    border-radius: 4px;
+    margin: 4px;
+    padding: 8px;
+}
+
+.notification-action:hover {
+    background: #859900;
+    color: #002b36;
+}
+
+.image {
+    border-radius: 4px;
+}
+
+.body-image {
+    border-radius: 4px;
+}
+
+.summary {
+    color: #859900;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.time {
+    color: #586e75;
+    font-size: 12px;
+}
+
+.body {
+    color: #839496;
+    font-size: 13px;
+}
+
+.control-center {
+    background: rgba(0, 43, 54, 0.95);
+    border: 2px solid #859900;
+    border-radius: 12px;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.floating-notifications {
+    background: transparent;
+}
+
+.widget-title {
+    color: #859900;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 12px;
+}
+
+.widget-dnd {
+    background: #073642;
+    border: 1px solid #859900;
+    border-radius: 8px;
+    margin: 8px;
+    padding: 12px;
+}
+
+.widget-dnd-on {
+    background: #859900;
+    color: #002b36;
+}
+
+.widget-dnd-off {
+    background: #073642;
+    color: #839496;
+}
+
+.widget-label {
+    color: #839496;
+    font-size: 14px;
+}

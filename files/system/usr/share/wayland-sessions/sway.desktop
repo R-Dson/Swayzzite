@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Sway
+Comment=Sway Tiling Wayland Compositor
+Exec=sway
+Type=Application
+DesktopNames=sway
+Keywords=wm;tiling;wayland;

@@ -1,0 +1,12 @@
+[Unit]
+Description=Swayzzite First-Login GTK Theme Setup
+ConditionPathExists=!%h/.config/swayzzite-gtk-setup-done
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/swayzzite-gtk-setup
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target
