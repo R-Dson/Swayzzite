@@ -25,6 +25,7 @@ modules:
         - pgdev/ghostty
         - erikreider/SwayNotificationCenter
         - alternateved/cliphist
+        - leloubil/wl-clip-persist
     install:
       packages:
         # Core & Terminal
@@ -63,7 +64,6 @@ modules:
         - cliphist
         # System Essentials
         - xdg-desktop-portal-wlr
-        - polkit-gnome
         - jetbrains-mono-fonts
         - google-noto-sans-fonts
         - google-noto-emoji-fonts

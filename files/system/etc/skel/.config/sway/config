@@ -45,7 +45,8 @@ exec_always pgrep -x "wl-paste" > /dev/null || wl-paste --type image --watch cli
 exec gammastep-indicator -l 59.3:18.0 -t 5700:3600 &
 
 # Polkit authentication agent (for sudo password prompts)
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# Bazzite already provides polkit-kde-agent, but you can uncomment if needed:
+# exec /usr/libexec/polkit-gnome-authentication-agent-1 &
 
 # Display auto-configuration
 exec kanshi &
