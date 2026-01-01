@@ -24,7 +24,7 @@ modules:
         - solopasha/hyprland
         - pgdev/ghostty
         - erikreider/SwayNotificationCenter
-        - sentriz/cliphist
+        - alternateved/cliphist
     install:
       packages:
         # Core & Terminal
