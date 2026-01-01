@@ -2,7 +2,7 @@
 # Wrapper script that calls the user setup script
 set -oue pipefail
 
-SCRIPT_PATH="/usr/local/lib/swayzzite/setup-gtk-themes.sh"
+SCRIPT_PATH="/usr/lib/swayzzite/setup-gtk-themes.sh"
 
 if [ -f "$SCRIPT_PATH" ]; then
     exec "$SCRIPT_PATH"
