@@ -25,6 +25,7 @@ modules:
         - pgdev/ghostty
         - erikreider/SwayNotificationCenter
         - alternateved/cliphist
+        - alternateved/tofi
         - leloubil/wl-clip-persist
     install:
       packages:
@@ -36,12 +37,10 @@ modules:
         - micro
         # UI & Widgets
         - waybar
-        - eww
         - tofi
-        - SwayNC
+        - SwayNotificationCenter
         - nwg-look
         # Files
-        - yazi
         - dolphin
         - kio-extras
         # Utilities & Screen
