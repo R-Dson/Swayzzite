@@ -23,7 +23,7 @@ modules:
         - atim/starship
         - solopasha/hyprland
         - pgdev/ghostty
-        - erikreider/SwayNC
+        - erikreider/SwayNotificationCenter
         - sentriz/cliphist
     install:
       packages:
