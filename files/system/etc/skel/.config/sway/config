@@ -171,7 +171,7 @@ set $sky #89dceb
 set $sapphire #74c7ec
 set $blue #89b4fa
 set $lavender #b4befe
-set $text #fcdcd
+set $text #fcdcdc
 set $subtext1 #bac2de
 set $subtext0 #a6adc8
 set $overlay2 #9399b2
