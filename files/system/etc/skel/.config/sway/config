@@ -58,6 +58,10 @@ exec gammastep-indicator -l 59.3:18.0 -t 5700:3600 &
 # Display auto-configuration
 exec kanshi &
 
+# System tray applets
+exec_always pgrep -x "nm-applet" > /dev/null || nm-applet --indicator &
+exec_always pgrep -x "blueman-applet" > /dev/null || blueman-applet &
+
 # Always create workspaces 1-3 on startup
 exec_always workspace 1; exec_always workspace 2; exec_always workspace 3; exec_always workspace 1
 

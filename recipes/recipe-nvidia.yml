@@ -66,6 +66,8 @@ modules:
         - cliphist
         # System Essentials
         - xdg-desktop-portal-wlr
+        - NetworkManager
+        - bluez
         # System utilities
         - fastfetch
         - fzf
@@ -90,7 +92,9 @@ modules:
         # Additional utilities
         - pavucontrol
         - nm-connection-editor
+        - network-manager-applet
         - blueman
+        - blueman-applet
         - seahorse
     remove:
       packages:
