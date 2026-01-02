@@ -143,6 +143,34 @@ else
     cargo install eza 2>/dev/null || warn "Failed to install eza (requires rust/cargo)"
 fi
 
+# lucidglyph - Font rendering tuning
+if [ -d "$HOME/.local/share/lucidglyph" ]; then
+    info "lucidglyph already installed, skipping..."
+else
+    info "Installing lucidglyph (font rendering tuning)..."
+    TEMP_DIR=$(mktemp -d)
+    info "Downloading latest lucidglyph release..."
+    curl -fsSL https://api.github.com/repos/maximilionus/lucidglyph/releases/latest -o "$TEMP_DIR/release.json" 2>/dev/null
+    if [ -f "$TEMP_DIR/release.json" ]; then
+        DOWNLOAD_URL=$(grep -o '"browser_download_url": *"[^"]*' "$TEMP_DIR/release.json" | grep 'lucidglyph.*\.tar\.gz' | head -1 | cut -d'"' -f4)
+        if [ -n "$DOWNLOAD_URL" ]; then
+            curl -fsSL "$DOWNLOAD_URL" -o "$TEMP_DIR/lucidglyph.tar.gz" 2>/dev/null
+            if [ -f "$TEMP_DIR/lucidglyph.tar.gz" ]; then
+                tar -xzf "$TEMP_DIR/lucidglyph.tar.gz" -C "$TEMP_DIR" 2>/dev/null
+                if [ -f "$TEMP_DIR/lucidglyph.sh" ]; then
+                    bash "$TEMP_DIR/lucidglyph.sh" install --user 2>/dev/null || warn "Failed to install lucidglyph"
+                    info "Note: You may need to log out and back in for lucidglyph font improvements to take effect."
+                fi
+            fi
+        else
+            warn "Failed to find lucidglyph download URL"
+        fi
+    else
+        warn "Failed to fetch lucidglyph release information"
+    fi
+    rm -rf "$TEMP_DIR"
+fi
+
 info ""
 info "Swayzzite user setup completed!"
 info ""

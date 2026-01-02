@@ -17,6 +17,9 @@ include /etc/sway/config.d/*
 # Configure your monitors here
 # output HDMI-A-1 resolution 1920x1080 position 0,0
 
+# Font rendering: Disable subpixel antialiasing for grayscale (lucidglyph recommendation)
+output * subpixel none
+
 # Input configuration
 input type:keyboard {
     xkb_layout us
