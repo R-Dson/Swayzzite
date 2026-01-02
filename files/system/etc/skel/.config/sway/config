@@ -164,6 +164,8 @@ for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
 for_window [app_id="blueman-manager"] floating enable
 for_window [app_id="yazi"] floating enable
+# Inhibit idle when window is fullscreen (useful for watching videos)
+for_window [inhibit_idle fullscreen] inhibit_idle fullscreen
 
 # Colors (Catppuccin Mocha)
 set $rosewater #f5e0dc
@@ -204,9 +206,24 @@ client.background $base
 # Gaps and borders
 default_border pixel 2
 default_floating_border pixel 2
+smart_borders on
+hide_edge_borders both
 gaps inner 1
 gaps outer 2
 smart_gaps on
+
+# Window title alignment
+title_align center
+
+# Focus behavior
+focus_follows_mouse yes
+focus_wrapping yes
+
+# Mouse behavior
+mouse_warping output
+
+# Split direction (horizontal first for laptop screens)
+default_split_direction horizontal
 
 # Floating modifier
 floating_modifier $mod normal

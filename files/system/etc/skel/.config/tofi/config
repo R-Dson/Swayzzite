@@ -6,24 +6,30 @@ font = "FiraCode Nerd Font"
 font-size = 14
 
 # Colors (Catppuccin Mocha)
-background-color = #1e1e2e
-text-color = #cdd6f4
+background-color = #0f0f17
+text-color = #fcdcdc
 prompt-color = #cba6f7
 input-color = #89b4fa
-default-result-color = #cdd6f4
-selection-background-color = #45475a
+default-result-color = #fcdcdc
+selection-background = #45475a
 selection-color = #f5e0dc
 border-color = #cba6f7
 
 # Layout
-width = 600px
-height = 400px
-window-padding = 10
-result-spacing = 15
+width = 600
+height = 400
 padding-top = 10
 padding-bottom = 10
 padding-left = 10
 padding-right = 10
+result-spacing = 15
+
+# Corner radius
+corner-radius = 0
+
+# Text cursor
+text-cursor = false
+text-cursor-style = bar
 
 # Behavior
 drun-launch = true
@@ -33,6 +39,5 @@ history-file = ~/.cache/tofi-history
 fuzzy-match = true
 multi-instance = false
 
-# Keyboard
-text-input-mode = "normal"
+# Terminal
 terminal = "foot"
