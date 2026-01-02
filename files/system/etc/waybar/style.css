@@ -2,8 +2,8 @@
 
 * {
     border: none;
-    border-radius: 8px;
-    font-family: "IBM Plex Sans", "Font Awesome 6 Free", "Font Awesome 6 Brands", sans-serif;
+    border-radius: 0;
+    font-family: "FiraCode Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Brands", monospace;
     font-size: 13px;
     min-height: 0;
     margin: 0;
@@ -22,22 +22,30 @@ window#waybar.hidden {
 tooltip {
     background-color: @base;
     border: 1px solid @surface1;
-    border-radius: 8px;
+    border-radius: 0;
 }
 
 tooltip label {
     color: @text;
 }
 
+#custom-menu {
+    padding: 0 16px;
+    margin: 4px 2px 4px 8px;
+    background-color: @mauve;
+    color: @base;
+    border-radius: 0;
+}
+
 #workspaces {
-    margin-left: 8px;
+    margin-left: 0;
 }
 
 #workspaces button {
     padding: 0 12px;
     background-color: transparent;
     color: @text;
-    border-radius: 8px;
+    border-radius: 0;
     margin: 4px 2px;
 }
 
@@ -60,7 +68,7 @@ tooltip label {
     margin: 4px 2px;
     background-color: @red;
     color: @base;
-    border-radius: 8px;
+    border-radius: 0;
 }
 
 #window {
@@ -73,7 +81,7 @@ tooltip label {
     margin: 4px 2px;
     background-color: @mauve;
     color: @base;
-    border-radius: 8px;
+    border-radius: 0;
 }
 
 #network {
@@ -81,7 +89,7 @@ tooltip label {
     margin: 4px 2px;
     background-color: @blue;
     color: @base;
-    border-radius: 8px;
+    border-radius: 0;
 }
 
 #network.disconnected {
@@ -93,7 +101,7 @@ tooltip label {
     margin: 4px 2px;
     background-color: @blue;
     color: @base;
-    border-radius: 8px;
+    border-radius: 0;
 }
 
 #pulseaudio {
@@ -101,7 +109,7 @@ tooltip label {
     margin: 4px 2px;
     background-color: @teal;
     color: @base;
-    border-radius: 8px;
+    border-radius: 0;
 }
 
 #pulseaudio.muted {
@@ -112,7 +120,7 @@ tooltip label {
 #battery {
     padding: 0 12px;
     margin: 4px 2px;
-    border-radius: 8px;
+    border-radius: 0;
 }
 
 #battery.charging {
