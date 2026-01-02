@@ -68,10 +68,12 @@ modules:
         - google-noto-emoji-fonts
     remove:
       packages:
-        # example: removing firefox (in favor of the flatpak)
+        # Remove firefox in favor of the flatpak
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+        - firefox-langpacks
+        # Remove ncurses-term to avoid conflict with ghostty's terminfo files
+        - ncurses-term
 
   - type: default-flatpaks
     configurations:
