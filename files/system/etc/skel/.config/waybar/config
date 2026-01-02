@@ -14,7 +14,7 @@
     },
 
     "custom/clipboard": {
-        "format": "",
+        "format": "CLIP",
         "on-click": "cliphist list | tofi --prompt-text 'Clipboard: ' | cliphist decode | wl-copy",
         "tooltip": false
     },
@@ -54,10 +54,10 @@
     },
 
     "network": {
-        "format-wifi": " {signalStrength}%",
-        "format-ethernet": " ETH",
-        "format-linked": " {essid}",
-        "format-disconnected": " DISCONNECTED",
+        "format-wifi": "WIFI {signalStrength}%",
+        "format-ethernet": "ETH",
+        "format-linked": "WIFI {essid}",
+        "format-disconnected": "DISCONNECTED",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)",
         "tooltip-format-ethernet": "{ifname}: {ipaddr}",
         "tooltip-format-disconnected": "Disconnected",
@@ -66,9 +66,9 @@
     },
 
     "bluetooth": {
-        "format": "",
-        "format-connected": " {num_connections}",
-        "format-disabled": "",
+        "format": "BT {num_connections}",
+        "format-connected": "BT {num_connections}",
+        "format-disabled": "BT OFF",
         "tooltip-format": "{status}",
         "tooltip-format-connected": "{controller_alias}\n\n{num_connections} connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
@@ -77,13 +77,13 @@
     },
 
     "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted": " MUTED",
+        "format": "VOL {volume}%",
+        "format-muted": "MUTED",
         "format-icons": {
             "default": ["", "", ""]
         },
-        "format-source": " {volume}%",
-        "format-source-muted": "",
+        "format-source": "MIC {volume}%",
+        "format-source-muted": "MUTED",
         "on-click": "pavucontrol",
         "on-click-right": "pavucontrol",
         "scroll-step": 5
@@ -91,8 +91,7 @@
 
     "backlight": {
         "device": "intel_backlight",
-        "format": "{icon} {percent}%",
-        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "format": "BRT {percent}%",
         "on-scroll-up": "brightnessctl set +5%",
         "on-scroll-down": "brightnessctl set 5%-",
         "tooltip": true
@@ -103,9 +102,9 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}%",
+        "format": "BAT {capacity}%",
         "format-icons": ["", "", "", "", ""],
-        "format-charging": " {capacity}%",
+        "format-charging": "BAT {capacity}+",
         "format-plugged": "{capacity}%",
         "tooltip-format": "{time} remaining",
         "on-click": "gnome-power-manager"
