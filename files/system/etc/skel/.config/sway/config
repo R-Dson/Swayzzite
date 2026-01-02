@@ -61,6 +61,7 @@ exec waybar
 # Launchers
 bindsym $mod+Return exec $term
 bindsym $mod+d exec $menu
+bindsym $mod+space exec $menu
 
 # Move focus
 bindsym $mod+$left focus left

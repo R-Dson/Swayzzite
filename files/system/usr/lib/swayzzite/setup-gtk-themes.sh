@@ -66,6 +66,16 @@ Gtk/MonospaceFontName "FiraCode Nerd Font 11"
 Gtk/CursorThemeName "Adwaita"
 EOF
 
+# Set default wallpaper if swww is available
+if command -v swww >/dev/null 2>&1; then
+    # Wait for swww-daemon to be ready
+    sleep 1
+    WALLPAPER="/usr/share/backgrounds/default.png"
+    if [ -f "$WALLPAPER" ]; then
+        swww img "$WALLPAPER" && logger "Swayzzite: Wallpaper set to $WALLPAPER"
+    fi
+fi
+
 # Mark as done
 touch "$MARKER_FILE"
 

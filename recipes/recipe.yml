@@ -17,6 +17,10 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
+  - type: script
+    scripts:
+      - download-wallpaper.sh
+
   - type: dnf
     repos:
       copr:
@@ -69,6 +73,11 @@ modules:
         - fira-code-fonts
         - google-noto-sans-fonts
         - google-noto-emoji-fonts
+        # Additional utilities
+        - pavucontrol
+        - nm-connection-editor
+        - blueman
+        - seahorse
     remove:
       packages:
         # Remove firefox in favor of the flatpak
@@ -86,6 +95,9 @@ modules:
         install: # system flatpaks we want all users to have and not remove
           - org.mozilla.firefox
           - org.gnome.Loupe
+          - org.gnome.clocks
+          - org.gnome.PowerStats
+          - com.github.wwmm.easyeffects
       - scope: user # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully

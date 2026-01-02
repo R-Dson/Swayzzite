@@ -1,0 +1,9 @@
+# This file downloads and sets up the default wallpaper
+# The actual wallpaper will be downloaded during first login
+
+# Wallpaper URL
+WALLPAPER_URL="https://raw.githubusercontent.com/hajosattila/dotfiles/refs/heads/main/wallpaper.png"
+WALLPAPER_DEST="/usr/share/backgrounds/default.png"
+
+# Download the wallpaper
+curl -sL -o "$WALLPAPER_DEST" "$WALLPAPER_URL"
