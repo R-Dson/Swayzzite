@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Swayzzite Power Menu
+# Provides a clean tofi-based menu for system power actions
+
+set -oue pipefail
+
+# Menu options with icons
+SELECTION="$(printf " Lock\n Suspend\n Logout\n Reboot\n Shutdown" | tofi --prompt-text "Power menu: ")"
+
+case "$SELECTION" in
+    *"Lock"*)
+        hyprlock
+        ;;
+    *"Suspend"*)
+        systemctl suspend
+        ;;
+    *"Logout"*)
+        swaymsg exit
+        ;;
+    *"Reboot"*)
+        systemctl reboot
+        ;;
+    *"Shutdown"*)
+        systemctl poweroff
+        ;;
+esac

@@ -228,5 +228,8 @@ bindsym XF86AudioPrev exec playerctl previous
 # Lock screen (using hyprlock)
 bindsym $mod+Escape exec hyprlock
 
+# Power menu (lock, suspend, logout, reboot, shutdown)
+bindsym $mod+Shift+e exec swayzzite-power-menu
+
 # Floating terminal
 bindsym $mod+Shift+Return exec $term --floating

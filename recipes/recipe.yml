@@ -27,6 +27,7 @@ modules:
         - alternateved/tofi
         - leloubil/wl-clip-persist
         - che/nerd-fonts
+        - lihaohong/yazi
     install:
       packages:
         # Core & Terminal
@@ -83,6 +84,13 @@ modules:
         - curl
         - rsync
         - pipx
+        # Modern CLI tools
+        - lazygit
+        - gdu
+        - procs
+        - delta
+        - btop
+        - yazi
         # Fonts
         - ibm-plex-sans-fonts
         - fira-code-fonts
@@ -118,6 +126,7 @@ modules:
           - org.gnome.clocks
           - org.gnome.PowerStats
           - com.github.wwmm.easyeffects
+          - com.obsproject.Studio
       - scope: user # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully

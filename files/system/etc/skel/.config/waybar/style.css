@@ -3,7 +3,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "IBM Plex Sans", "Font Awesome 6 Free", "Font Awesome 6 Brands", sans-serif;
+    font-family: "IBM Plex Sans", "Font Awesome 6 Free", "Font Awesome 6 Brands", "Noto Color Emoji", sans-serif;
     font-size: 13px;
     min-height: 0;
     margin: 0;
@@ -33,6 +33,14 @@ tooltip label {
     padding: 0 16px;
     margin: 4px 2px 4px 8px;
     background-color: @mauve;
+    color: @base;
+    border-radius: 0;
+}
+
+#custom-clipboard {
+    padding: 0 12px;
+    margin: 4px 2px;
+    background-color: @lavender;
     color: @base;
     border-radius: 0;
 }
@@ -115,6 +123,14 @@ tooltip label {
 #pulseaudio.muted {
     background-color: @surface0;
     color: @text;
+}
+
+#backlight {
+    padding: 0 12px;
+    margin: 4px 2px;
+    background-color: @yellow;
+    color: @base;
+    border-radius: 0;
 }
 
 #battery {

@@ -3,13 +3,19 @@
     "position": "top",
     "height": 36,
     "spacing": 0,
-    "modules-left": ["custom/menu", "sway/workspaces", "sway/mode"],
+    "modules-left": ["custom/menu", "sway/workspaces", "sway/mode", "custom/clipboard"],
     "modules-center": ["sway/window"],
-    "modules-right": ["tray", "bluetooth", "network", "pulseaudio", "battery", "clock"],
+    "modules-right": ["tray", "bluetooth", "network", "pulseaudio", "backlight", "battery", "clock"],
 
     "custom/menu": {
         "format": "⌘",
         "on-click": "tofi-drun --drun-launch=true",
+        "tooltip": false
+    },
+
+    "custom/clipboard": {
+        "format": "",
+        "on-click": "cliphist list | tofi --prompt-text 'Clipboard: ' | cliphist decode | wl-copy",
         "tooltip": false
     },
 
@@ -81,6 +87,15 @@
         "on-click": "pavucontrol",
         "on-click-right": "pavucontrol",
         "scroll-step": 5
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "tooltip": true
     },
 
     "battery": {
