@@ -33,8 +33,9 @@ input type:touchpad {
 font "FiraCode Nerd Font 11"
 
 # Startup Services
-# Wallpaper daemon
+# Wallpaper daemon and set wallpaper
 exec_always pgrep -x "swww-daemon" > /dev/null || swww-daemon &
+exec_always swww img /usr/share/backgrounds/default.png &
 
 # Notification daemon
 exec_always pgrep -x "swaync" > /dev/null || swaync &
@@ -61,7 +62,6 @@ exec waybar
 # Launchers
 bindsym $mod+Return exec $term
 bindsym $mod+d exec $menu
-bindsym $mod+space exec $menu
 
 # Move focus
 bindsym $mod+$left focus left
