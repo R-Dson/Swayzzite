@@ -156,7 +156,7 @@ bindsym Print exec grim -g "$(slurp)" - | swappy -f -
 
 # Reload/Exit
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -B 'Yes' 'swaymsg exit'
+bindsym $mod+Shift+q exec swaynag -t warning -m 'Exit sway?' -B 'Yes' 'swaymsg exit'
 
 # Window rules
 for_window [window_role="pop-up"] floating enable
