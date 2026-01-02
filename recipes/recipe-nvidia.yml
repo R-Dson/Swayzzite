@@ -34,6 +34,8 @@ modules:
         - sway
         - foot
         - ghostty
+        - fish
+        - tmux
         - starship
         - micro
         - neovim
