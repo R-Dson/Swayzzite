@@ -24,7 +24,8 @@ cat > "$CONFIG_DIR/gtk-3.0/settings.ini" << 'EOF'
 [Settings]
 gtk-theme-name=Adwaita-dark
 gtk-icon-theme-name=Adwaita
-gtk-font-name=JetBrains Mono 11
+gtk-font-name=IBM Plex Sans 11
+gtk-monospace-font-name=FiraCode Nerd Font 11
 gtk-cursor-theme-name=Adwaita
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_BOTH
@@ -44,7 +45,8 @@ cat > "$CONFIG_DIR/gtk-4.0/settings.ini" << 'EOF'
 [Settings]
 gtk-theme-name=Adwaita-dark
 gtk-icon-theme-name=Adwaita
-gtk-font-name=JetBrains Mono 11
+gtk-font-name=IBM Plex Sans 11
+gtk-monospace-font-name=FiraCode Nerd Font 11
 gtk-cursor-theme-name=Adwaita
 EOF
 
@@ -59,7 +61,8 @@ mkdir -p "$CONFIG_DIR/xsettingsd"
 cat > "$CONFIG_DIR/xsettingsd/xsettingsd.conf" << 'EOF'
 Net/ThemeName "Adwaita-dark"
 Net/IconThemeName "Adwaita"
-Gtk/FontName "JetBrains Mono 11"
+Gtk/FontName "IBM Plex Sans 11"
+Gtk/MonospaceFontName "FiraCode Nerd Font 11"
 Gtk/CursorThemeName "Adwaita"
 EOF
 

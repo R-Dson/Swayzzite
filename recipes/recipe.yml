@@ -27,6 +27,7 @@ modules:
         - alternateved/cliphist
         - alternateved/tofi
         - leloubil/wl-clip-persist
+        - che/nerd-fonts
     install:
       packages:
         # Core & Terminal
@@ -63,7 +64,9 @@ modules:
         - cliphist
         # System Essentials
         - xdg-desktop-portal-wlr
-        - jetbrains-mono-fonts
+        # Fonts
+        - ibm-plex-sans-fonts
+        - fira-code-fonts
         - google-noto-sans-fonts
         - google-noto-emoji-fonts
     remove:

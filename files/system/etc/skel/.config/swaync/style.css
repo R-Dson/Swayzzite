@@ -1,7 +1,7 @@
-/* SwayNC Styles - Solarized Dark */
+/* SwayNC Styles - Catppuccin Mocha */
 
 * {
-    font-family: "JetBrains Mono", monospace;
+    font-family: "IBM Plex Sans", monospace;
 }
 
 window {
@@ -14,15 +14,15 @@ window {
 
 .notification-row:focus,
 .notification-row:hover {
-    background: #073642;
+    background: #45475a;
 }
 
 .notification-content {
-    background: #002b36;
+    background: #1e1e2e;
     border-radius: 8px;
     margin: 8px;
     padding: 12px;
-    border: 1px solid #859900;
+    border: 1px solid #cba6f7;
 }
 
 .notification-default-action {
@@ -32,29 +32,29 @@ window {
 }
 
 .close-button {
-    background: #dc322f;
-    color: #002b36;
+    background: #f38ba8;
+    color: #1e1e2e;
     border-radius: 4px;
     margin: 4px;
     padding: 4px;
 }
 
 .close-button:hover {
-    background: #cb4b16;
+    background: #fab387;
 }
 
 .notification-action {
-    background: #073642;
-    color: #839496;
-    border: 1px solid #859900;
+    background: #313244;
+    color: #cdd6f4;
+    border: 1px solid #cba6f7;
     border-radius: 4px;
     margin: 4px;
     padding: 8px;
 }
 
 .notification-action:hover {
-    background: #859900;
-    color: #002b36;
+    background: #cba6f7;
+    color: #1e1e2e;
 }
 
 .image {
@@ -66,24 +66,24 @@ window {
 }
 
 .summary {
-    color: #859900;
+    color: #cba6f7;
     font-size: 14px;
     font-weight: bold;
 }
 
 .time {
-    color: #586e75;
+    color: #6c7086;
     font-size: 12px;
 }
 
 .body {
-    color: #839496;
+    color: #cdd6f4;
     font-size: 13px;
 }
 
 .control-center {
-    background: rgba(0, 43, 54, 0.95);
-    border: 2px solid #859900;
+    background: rgba(30, 30, 46, 0.95);
+    border: 2px solid #cba6f7;
     border-radius: 12px;
 }
 
@@ -96,31 +96,31 @@ window {
 }
 
 .widget-title {
-    color: #859900;
+    color: #cba6f7;
     font-size: 16px;
     font-weight: bold;
     margin: 12px;
 }
 
 .widget-dnd {
-    background: #073642;
-    border: 1px solid #859900;
+    background: #313244;
+    border: 1px solid #cba6f7;
     border-radius: 8px;
     margin: 8px;
     padding: 12px;
 }
 
 .widget-dnd-on {
-    background: #859900;
-    color: #002b36;
+    background: #cba6f7;
+    color: #1e1e2e;
 }
 
 .widget-dnd-off {
-    background: #073642;
-    color: #839496;
+    background: #313244;
+    color: #cdd6f4;
 }
 
 .widget-label {
-    color: #839496;
+    color: #cdd6f4;
     font-size: 14px;
 }
