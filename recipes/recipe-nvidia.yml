@@ -28,6 +28,7 @@ modules:
         - leloubil/wl-clip-persist
         - che/nerd-fonts
         - lihaohong/yazi
+        - dejan/lazygit
     install:
       packages:
         # Core & Terminal
@@ -85,12 +86,12 @@ modules:
         - rsync
         - pipx
         # Modern CLI tools
+        - btop
+        - yazi
         - lazygit
         - gdu
         - procs
-        - delta
-        - btop
-        - yazi
+        - git-delta
         # Fonts
         - ibm-plex-sans-fonts
         - fira-code-fonts
