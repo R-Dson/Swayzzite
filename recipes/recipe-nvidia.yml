@@ -92,6 +92,8 @@ modules:
         - gdu
         - procs
         - git-delta
+        # Autotiling dependency
+        - python3-i3ipc
         # Fonts
         - ibm-plex-sans-fonts
         - fira-code-fonts

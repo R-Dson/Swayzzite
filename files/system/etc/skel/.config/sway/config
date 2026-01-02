@@ -65,6 +65,10 @@ exec_always pgrep -x "blueman-applet" > /dev/null || blueman-applet &
 # Always create workspaces 1-3 on startup
 exec_always workspace 1; exec_always workspace 2; exec_always workspace 3; exec_always workspace 1
 
+# Autotiling (automatically switch horizontal/vertical split orientation)
+# Enabled on odd workspaces only (1, 3, 5, 7, 9) to avoid conflicts with stack/tab layouts
+exec_always autotiling -w 1 3 5 7 9
+
 # Status bar
 exec waybar
 
@@ -164,8 +168,6 @@ for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
 for_window [app_id="blueman-manager"] floating enable
 for_window [app_id="yazi"] floating enable
-# Inhibit idle when window is fullscreen (useful for watching videos)
-for_window [inhibit_idle fullscreen] inhibit_idle fullscreen
 
 # Colors (Catppuccin Mocha)
 set $rosewater #f5e0dc
@@ -221,9 +223,6 @@ focus_wrapping yes
 
 # Mouse behavior
 mouse_warping output
-
-# Split direction (horizontal first for laptop screens)
-default_split_direction horizontal
 
 # Floating modifier
 floating_modifier $mod normal
