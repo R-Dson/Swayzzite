@@ -8,7 +8,7 @@
     "modules-right": ["tray", "bluetooth", "network", "pulseaudio", "battery", "clock"],
 
     "custom/menu": {
-        "format": "",
+        "format": "⌘",
         "on-click": "tofi-drun --drun-launch=true",
         "tooltip": false
     },
