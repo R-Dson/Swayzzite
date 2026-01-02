@@ -74,6 +74,15 @@ else
     curl -f https://zed.dev/install.sh | sh 2>/dev/null || warn "Failed to install Zed"
 fi
 
+# zed-dark theme for Zed editor
+if [ -f "$HOME/.config/zed/themes/zed-dark.json" ]; then
+    info "zed-dark theme already installed, skipping..."
+else
+    info "Installing zed-dark theme for Zed..."
+    mkdir -p "$HOME/.config/zed/themes" 2>/dev/null
+    curl -fsSL https://raw.githubusercontent.com/mattermill/zed-dark/main/zed-dark.json -o "$HOME/.config/zed/themes/zed-dark.json" 2>/dev/null || warn "Failed to install zed-dark theme"
+fi
+
 # mise - Development environment manager (formerly rtx)
 if command -v mise >/dev/null 2>&1; then
     info "mise already installed, skipping..."
