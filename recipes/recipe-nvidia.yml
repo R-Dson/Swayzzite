@@ -100,7 +100,9 @@ modules:
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks
-        # Remove ncurses-term to avoid conflict with ghostty's terminfo files
+    # Replace ncurses-term with ghostty to resolve terminfo conflict
+    replace:
+      packages:
         - ncurses-term
 
   - type: default-flatpaks
