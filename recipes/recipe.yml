@@ -22,7 +22,6 @@ modules:
       copr:
         - atim/starship
         - solopasha/hyprland
-        - pgdev/ghostty
         - erikreider/SwayNotificationCenter
         - alternateved/cliphist
         - alternateved/tofi
@@ -33,7 +32,6 @@ modules:
         # Core & Terminal
         - sway
         - foot
-        - ghostty
         - fish
         - tmux
         - starship
@@ -100,9 +98,8 @@ modules:
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks
-    # Replace ncurses-term with ghostty to resolve terminfo conflict
-    replace:
-      packages:
+        # Remove ghostty and ncurses-term to avoid terminfo conflict
+        - ghostty
         - ncurses-term
 
   - type: default-flatpaks
