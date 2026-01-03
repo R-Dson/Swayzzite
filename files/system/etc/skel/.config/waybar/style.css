@@ -40,7 +40,7 @@ tooltip label {
 #custom-clipboard {
     padding: 0 12px;
     margin: 4px 2px;
-    background-color: @cyan;
+    background-color: @orange;
     color: @bg;
     border-radius: 0;
 }
@@ -87,7 +87,7 @@ tooltip label {
 #clock {
     padding: 0 16px;
     margin: 4px 2px;
-    background-color: @blue;
+    background-color: @yellow;
     color: @bg;
     border-radius: 0;
 }
@@ -123,6 +123,21 @@ tooltip label {
 #pulseaudio.muted {
     background-color: @gray;
     color: @fg;
+}
+
+#pulseaudio.low {
+    background-color: @green;
+    color: @bg;
+}
+
+#pulseaudio.medium {
+    background-color: @yellow;
+    color: @bg;
+}
+
+#pulseaudio.high {
+    background-color: @red;
+    color: @bg;
 }
 
 #backlight {

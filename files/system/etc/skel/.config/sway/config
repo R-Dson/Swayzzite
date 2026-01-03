@@ -74,8 +74,9 @@ exec_always autotiling -w 1 3 5 7 9
 exec waybar
 
 # Key bindings
-# Window switcher (Alt+Tab to list and focus windows)
-bindsym $mod+Tab exec swayzzite-window-switcher
+# Window switcher (Alt+Tab to cycle through windows)
+bindsym $mod+Tab exec swaymsg focus next
+bindsym $mod+Shift+Tab exec swaymsg focus prev
 
 # Launchers
 bindsym $mod+Return exec $term

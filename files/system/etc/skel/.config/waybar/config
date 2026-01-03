@@ -86,7 +86,12 @@
         "format-source-muted": "MUTED",
         "on-click": "pavucontrol",
         "on-click-right": "pavucontrol",
-        "scroll-step": 5
+        "scroll-step": 5,
+        "states": {
+            "low": 33,
+            "medium": 80,
+            "high": 100
+        }
     },
 
     "backlight": {
