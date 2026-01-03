@@ -173,31 +173,25 @@ for_window [app_id="blueman-manager"] floating enable
 for_window [app_id="yazi"] floating enable
 
 # Colors (Srcery)
-set $bg #1c1b19
-set $fg #fce8c3
+set $base #1c1b19
+set $text #fce8c3
 set $red #ef2f27
-set $red_bright #f75341
 set $green #519f50
-set $green_bright #98bc37
 set $yellow #fbb829
-set $yellow_bright #fed06e
 set $blue #2c78bf
-set $blue_bright #68a8e4
 set $magenta #e02c6d
-set $magenta_bright #ff5c8f
 set $cyan #0aaeb3
-set $cyan_bright #2be4d0
 set $orange #ff5f00
 set $gray #918175
 set $white #fce8c3
 
 # Window borders (Srcery)
-client.focused $yellow $bg $fg $yellow $yellow
-client.focused_inactive $gray $bg $fg $gray $gray
-client.unfocused $gray $bg $fg $gray $gray
-client.urgent $red $bg $red $gray $red
-client.placeholder $gray $bg $fg $gray $gray
-client.background $bg
+client.focused $yellow $base $text $yellow $yellow
+client.focused_inactive $gray $base $text $gray $gray
+client.unfocused $gray $base $text $gray $gray
+client.urgent $red $base $red $gray $red
+client.placeholder $gray $base $text $gray $gray
+client.background $base
 
 # Gaps and borders
 default_border pixel 2
