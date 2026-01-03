@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Foot terminal with isolated tmux session
+SOCKET=$(mktemp -u /tmp/tmux-XXXXXXX)
+exec tmux -L "$SOCKET" new-session -A -s main
