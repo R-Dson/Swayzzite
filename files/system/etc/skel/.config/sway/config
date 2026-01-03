@@ -2,7 +2,7 @@
 # Based on Bazzite DX NVIDIA
 
 # Variables
-set $mod Mod1  # Use Alt as the primary modifier (instead of Super/Mod4)
+set $mod Mod1
 set $left h
 set $down j
 set $up k
