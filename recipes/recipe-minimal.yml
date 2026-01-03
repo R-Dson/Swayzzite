@@ -1,0 +1,199 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# image will be published to ghcr.io/<user>/<name>
+name: swayzzite-minimal
+# description will be included in the image's metadata
+description: Swayzzite Minimal with Bazzite DX - Sway Wayland desktop on gaming-optimized Fedora Atomic (KDE removed).
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/bazzite-dx
+image-version: latest
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  - type: files
+    files:
+      - source: system
+        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+
+  - type: dnf
+    repos:
+      copr:
+        - atim/starship
+        - solopasha/hyprland
+        - erikreider/SwayNotificationCenter
+        - alternateved/cliphist
+        - alternateved/tofi
+        - leloubil/wl-clip-persist
+        - che/nerd-fonts
+        - lihaohong/yazi
+        - dejan/lazygit
+    install:
+      packages:
+        # Core & Terminal
+        - sway
+        - foot
+        - fish
+        - tmux
+        - starship
+        - micro
+        - neovim
+        # UI & Widgets
+        - waybar
+        - tofi
+        - SwayNotificationCenter
+        - nwg-look
+        # Files
+        - dolphin
+        - kio-extras
+        # Utilities & Screen
+        - hyprlock
+        - hypridle
+        - kanshi
+        - wdisplays
+        - wlr-randr
+        - swww
+        - brightnessctl
+        - imv
+        - waypipe
+        - gammastep
+        # Screenshots & Clipboard
+        - grim
+        - slurp
+        - swappy
+        - flameshot
+        - wl-clipboard
+        - wl-clip-persist
+        - cliphist
+        # System Essentials
+        - xdg-desktop-portal-wlr
+        - NetworkManager
+        - bluez
+        # System utilities
+        - fastfetch
+        - fzf
+        - gum
+        - tldr
+        - bind-utils
+        - iputils
+        - pciutils
+        - playerctl
+        - tar
+        - unzip
+        - wget
+        - curl
+        - rsync
+        - pipx
+        # Modern CLI tools
+        - btop
+        - yazi
+        - lazygit
+        - gdu
+        - procs
+        - git-delta
+        # Autotiling dependency
+        - python3-i3ipc
+        # Fonts
+        - ibm-plex-sans-fonts
+        - fira-code-fonts
+        - google-noto-sans-fonts
+        - google-noto-emoji-fonts
+        - fontawesome-fonts-all
+        # Additional utilities
+        - pavucontrol
+        - nm-connection-editor
+        - network-manager-applet
+        - blueman
+        - blueman-applet
+        - seahorse
+    remove:
+      packages:
+        # Remove firefox in favor of the flatpak
+        # "firefox" is the main package, "firefox-langpacks" is a dependency
+        - firefox
+        - firefox-langpacks
+        # Remove ghostty and ncurses-term to avoid terminfo conflict
+        - ghostty
+        - ncurses-term
+
+  - type: script
+    snippets:
+      - |
+        #!/usr/bin/env bash
+        # Remove KDE desktop packages to reduce image size
+        # This removes KDE Plasma while keeping KDE apps like Dolphin
+
+        # Remove KDE settings and core Plasma packages
+        dnf5 remove -y \
+          kde-settings \
+          kde-settings-pulseaudio \
+          kde-settings-minimal \
+          plasma-workspace \
+          plasma-desktop \
+          plasma-systemsettings \
+          kwin \
+          kwin-wayland \
+          kwin-x11 \
+          kde-cli-tools \
+          kde-gtk-config \
+          || true
+
+        # Remove additional KDE packages
+        dnf5 remove -y \
+          kde-settings-* \
+          plasma-* \
+          kwin* \
+          kde-cli* \
+          kde-gtk* \
+          || true
+
+        # Remove KDE dependencies we don't need
+        dnf5 remove -y \
+          baloo \
+          baloo-widgets \
+          kactivitymanagerd \
+          kgamma \
+          kscreen \
+          kscreenlocker \
+          kwallet-pam \
+          kwayland-integration \
+          oxygen-sounds \
+          plasma-browser-integration \
+          plasma-desktop-docs \
+          plasma-discover \
+          plasma-drkonvi \
+          plasma-integration \
+          plasma-nm \
+          plasma-pa \
+          plasma-systemmonitor \
+          plasma-thunderbolt \
+          plasma-welcome \
+          plasma-workspace-wallpapers \
+          polkit-kde \
+          powerdevil \
+          sddm-kcm \
+          systemsettings \
+          xdg-desktop-portal-kde \
+          || true
+
+        # Clean DNF cache to reduce image size
+        dnf5 clean all
+        rm -rf /var/cache/dnf/*
+
+  - type: default-flatpaks
+    configurations:
+      - notify: true # Send notification after install/uninstall is finished (true/false)
+        scope: system
+        # If no repo information is specified, Flathub will be used by default
+        install: # system flatpaks we want all users to have and not remove
+          - org.mozilla.firefox
+          - com.brave.Browser
+          - org.gnome.Loupe
+          - org.gnome.clocks
+          - org.gnome.PowerStats
+          - com.github.wwmm.easyeffects
+          - com.obsproject.Studio
+      - scope: user # Also add Flathub user repo, but no user packages
+
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
