@@ -2,7 +2,7 @@
 # Based on Bazzite DX NVIDIA
 
 # Variables
-set $mod Mod4
+set $mod Mod1  # Use Alt as the primary modifier (instead of Super/Mod4)
 set $left h
 set $down j
 set $up k
@@ -73,6 +73,9 @@ exec_always autotiling -w 1 3 5 7 9
 exec waybar
 
 # Key bindings
+# Window switcher (Alt+Tab to list and focus windows)
+bindsym $mod+Tab exec swayzzite-window-switcher
+
 # Launchers
 bindsym $mod+Return exec $term
 bindsym $mod+d exec $menu
@@ -169,41 +172,32 @@ for_window [app_id="nm-connection-editor"] floating enable
 for_window [app_id="blueman-manager"] floating enable
 for_window [app_id="yazi"] floating enable
 
-# Colors (Catppuccin Mocha)
-set $rosewater #f5e0dc
-set $flamingo #f2cdcd
-set $pink #f5c2e7
-set $mauve #cba6f7
-set $red #f38ba8
-set $maroon #eba0ac
-set $peach #fab387
-set $yellow #f9e2af
-set $green #a6e3a1
-set $teal #94e2d5
-set $sky #89dceb
-set $sapphire #74c7ec
-set $blue #89b4fa
-set $lavender #b4befe
-set $text #fcdcdc
-set $subtext1 #bac2de
-set $subtext0 #a6adc8
-set $overlay2 #9399b2
-set $overlay1 #7f849c
-set $overlay0 #6c7086
-set $surface2 #585b70
-set $surface1 #45475a
-set $surface0 #313244
-set $base #0f0f17
-set $mantle #181825
-set $crust #11111b
+# Colors (Srcery)
+set $bg #1c1b19
+set $fg #fce8c3
+set $red #ef2f27
+set $red_bright #f75341
+set $green #519f50
+set $green_bright #98bc37
+set $yellow #fbb829
+set $yellow_bright #fed06e
+set $blue #2c78bf
+set $blue_bright #68a8e4
+set $magenta #e02c6d
+set $magenta_bright #ff5c8f
+set $cyan #0aaeb3
+set $cyan_bright #2be4d0
+set $orange #ff5f00
+set $gray #918175
+set $white #fce8c3
 
-# Window borders (Catppuccin Mocha)
-client.focused $pink $base $text $rosewater $pink
-client.focused_inactive $overlay0 $base $text $rosewater $overlay0
-client.unfocused $overlay0 $base $text $rosewater $overlay0
-client.urgent $peach $base $peach $overlay0 $peach
-client.placeholder $overlay0 $base $text $overlay0 $overlay0
-client.background $base
+# Window borders (Srcery)
+client.focused $yellow $bg $fg $yellow $yellow
+client.focused_inactive $gray $bg $fg $gray $gray
+client.unfocused $gray $bg $fg $gray $gray
+client.urgent $red $bg $red $gray $red
+client.placeholder $gray $bg $fg $gray $gray
+client.background $bg
 
 # Gaps and borders
 default_border pixel 2

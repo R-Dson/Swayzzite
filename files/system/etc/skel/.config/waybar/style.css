@@ -11,8 +11,8 @@
 }
 
 window#waybar {
-    background-color: @base;
-    color: @text;
+    background-color: @bg;
+    color: @fg;
 }
 
 window#waybar.hidden {
@@ -20,28 +20,28 @@ window#waybar.hidden {
 }
 
 tooltip {
-    background-color: @base;
-    border: 1px solid @surface1;
+    background-color: @bg;
+    border: 1px solid @gray;
     border-radius: 0;
 }
 
 tooltip label {
-    color: @text;
+    color: @fg;
 }
 
 #custom-menu {
     padding: 0 16px;
     margin: 4px 2px 4px 8px;
-    background-color: @mauve;
-    color: @base;
+    background-color: @magenta;
+    color: @bg;
     border-radius: 0;
 }
 
 #custom-clipboard {
     padding: 0 12px;
     margin: 4px 2px;
-    background-color: @lavender;
-    color: @base;
+    background-color: @cyan;
+    color: @bg;
     border-radius: 0;
 }
 
@@ -52,51 +52,51 @@ tooltip label {
 #workspaces button {
     padding: 0 12px;
     background-color: transparent;
-    color: @text;
+    color: @fg;
     border-radius: 0;
     margin: 4px 2px;
 }
 
 #workspaces button:hover {
-    background-color: @surface0;
+    background-color: @gray;
 }
 
 #workspaces button.focused {
-    background-color: @mauve;
-    color: @base;
+    background-color: @yellow;
+    color: @bg;
 }
 
 #workspaces button.urgent {
     background-color: @red;
-    color: @base;
+    color: @bg;
 }
 
 #mode {
     padding: 0 12px;
     margin: 4px 2px;
     background-color: @red;
-    color: @base;
+    color: @bg;
     border-radius: 0;
 }
 
 #window {
-    color: @text;
+    color: @fg;
     margin: 0 8px;
 }
 
 #clock {
     padding: 0 16px;
     margin: 4px 2px;
-    background-color: @mauve;
-    color: @base;
+    background-color: @blue;
+    color: @bg;
     border-radius: 0;
 }
 
 #network {
     padding: 0 12px;
     margin: 4px 2px;
-    background-color: @blue;
-    color: @base;
+    background-color: @green;
+    color: @bg;
     border-radius: 0;
 }
 
@@ -107,29 +107,29 @@ tooltip label {
 #bluetooth {
     padding: 0 12px;
     margin: 4px 2px;
-    background-color: @blue;
-    color: @base;
+    background-color: @blue_bright;
+    color: @bg;
     border-radius: 0;
 }
 
 #pulseaudio {
     padding: 0 12px;
     margin: 4px 2px;
-    background-color: @teal;
-    color: @base;
+    background-color: @cyan_bright;
+    color: @bg;
     border-radius: 0;
 }
 
 #pulseaudio.muted {
-    background-color: @surface0;
-    color: @text;
+    background-color: @gray;
+    color: @fg;
 }
 
 #backlight {
     padding: 0 12px;
     margin: 4px 2px;
     background-color: @yellow;
-    color: @base;
+    color: @bg;
     border-radius: 0;
 }
 
@@ -141,23 +141,23 @@ tooltip label {
 
 #battery.charging {
     background-color: @green;
-    color: @base;
+    color: @bg;
 }
 
 #battery.warning:not(.charging) {
     background-color: @yellow;
-    color: @base;
+    color: @bg;
 }
 
 #battery.critical:not(.charging) {
     background-color: @red;
-    color: @base;
+    color: @bg;
     animation: blink 1s linear infinite;
 }
 
 @keyframes blink {
     to {
-        background-color: @base;
+        background-color: @bg;
         color: @red;
     }
 }

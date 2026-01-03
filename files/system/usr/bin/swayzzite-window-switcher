@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# Swayzzite Window Switcher
+# Lists all windows and lets you focus one using tofi
+
+# Get list of all windows with their workspace, app ID, and title
+windows=$(swaymsg -t get_tree | \
+    jq -r '
+        recurse(.nodes[]?, .floating_nodes[]?) |
+        select(.type == "con" and .name != null and .window_properties != null) |
+        "\(.workspace().num): \(.window_properties.class // .window_properties.instance // "unknown") — \(.name)"'
+)
+
+# Count windows
+window_count=$(echo "$windows" | wc -l)
+
+if [ "$window_count" -eq 0 ]; then
+    exit 0
+fi
+
+# Show window list in tofi
+selected=$(echo "$windows" | tofi --prompt-text "Switch to window: ")
+
+if [ -n "$selected" ]; then
+    # Extract workspace number and window title from selection
+    # Format: "workspace: app — title"
+    workspace=$(echo "$selected" | cut -d':' -f1)
+    title=$(echo "$selected" | cut -d'—' -f2- | sed 's/^[[:space:]]*//')
+
+    # Switch to workspace first
+    swaymsg workspace number "$workspace"
+
+    # Focus the window by title
+    swaymsg "[title=\"$(echo "$title" | sed 's/"/\\"/g')\"]" focus
+fi

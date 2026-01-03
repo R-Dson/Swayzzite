@@ -1,19 +1,19 @@
 # Tofi Configuration for Swayzzite
-# Catppuccin Mocha theme matching Sway and Waybar
+# Srcery color scheme matching Sway and Waybar
 
 # Font
 font = "FiraCode Nerd Font"
 font-size = 14
 
-# Colors (Catppuccin Mocha)
-background-color = #0f0f17
-text-color = #fcdcdc
-prompt-color = #cba6f7
-input-color = #89b4fa
-default-result-color = #fcdcdc
-selection-background = #45475a
-selection-color = #f5e0dc
-border-color = #cba6f7
+# Colors (Srcery)
+background-color = #1c1b19
+text-color = #fce8c3
+prompt-color = #fbb829
+input-color = #fce8c3
+default-result-color = #fce8c3
+selection-background = #918175
+selection-color = #fce8c3
+border-color = #fbb829
 
 # Layout
 width = 600
